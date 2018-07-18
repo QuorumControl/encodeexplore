@@ -27,7 +27,7 @@
 
 [[constraint]]
   name = "github.com/ipfs/go-ipld-cbor"
-  branch = "refmt"
+  branch = "feat/refmt-pool"
 
 [[constraint]]
   name = "github.com/multiformats/go-multihash"

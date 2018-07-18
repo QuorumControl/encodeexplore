@@ -26,6 +26,12 @@
   version = "v1.7.0"
 
 [[projects]]
+  name = "github.com/google/gops"
+  packages = ["agent","internal","signal"]
+  revision = "89672dbe3c4ba97d53af7e839e8097e1ccbb4977"
+  version = "v0.3.5"
+
+[[projects]]
   branch = "master"
   name = "github.com/gxed/hashland"
   packages = ["keccakpg"]
@@ -50,16 +56,22 @@
   version = "v1.2.8"
 
 [[projects]]
-  branch = "refmt"
+  branch = "feat/refmt-pool"
   name = "github.com/ipfs/go-ipld-cbor"
-  packages = ["."]
-  revision = "ab2a510fdde7b8b9277be778f8d661f1f62bb62d"
+  packages = [".","encoding"]
+  revision = "b76615f67a29c25fcde043ce8597242754906f34"
 
 [[projects]]
   name = "github.com/ipfs/go-ipld-format"
   packages = ["."]
   revision = "6b4c9ea0f786788f3ee4e458ca39bb3f4da2ee71"
   version = "v0.5.4"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/kardianos/osext"
+  packages = ["."]
+  revision = "ae77be60afb1dcacde03767a8c37337fad28ac14"
 
 [[projects]]
   branch = "master"
@@ -100,7 +112,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/polydawn/refmt"
-  packages = ["cbor","obj","obj/atlas","shared","tok"]
+  packages = [".","cbor","json","obj","obj/atlas","shared","tok"]
   revision = "54ef854b7d9bc97e65cf6d8c8f7c8845107eaefe"
 
 [[projects]]
@@ -136,6 +148,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e04642a52f9781f2637276c4398bb9def70aa8ee558f717790b5cdb2b05e2085"
+  inputs-digest = "99731ccec4d7e99cdca18cede5ec3096eec8fab2e03f095943bcdb20d1646c2b"
   solver-name = "gps-cdcl"
   solver-version = 1

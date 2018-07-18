@@ -231,12 +231,12 @@ func (gn *GNode) OnMessage(wr *WireRequest) (*WireResponse, error) {
 	gn.onNewSig(wr.Message, &wr.Signature)
 
 	countEncodes++
-	start := time.Now()
+	//start := time.Now()
 	cbornode.WrapObject(wr, multihash.SHA2_256, -1)
-	took := time.Now().Sub(start)
-	if took > 200*time.Millisecond {
-		log.Error("decode", "took", took)
-	}
+	//took := time.Now().Sub(start)
+	//if took > 200*time.Millisecond {
+	//	log.Error("decode", "took", took)
+	//}
 
 	if 1.0-(float64(len(gn.CurrentSig.Missing(gn.NodeSystem)))/float64(len(gn.NodeSystem.GNodes))) >= threshold {
 		log.Debug("moving to accepted state", "node", gn.Id)
