@@ -7,14 +7,10 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/google/gops/agent"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGossip(t *testing.T) {
-	if err := agent.Listen(agent.Options{}); err != nil {
-		panic(err)
-	}
 	log.Root().SetHandler(log.LvlFilterHandler(log.Lvl(log.LvlError), log.StreamHandler(os.Stderr, log.TerminalFormat(true))))
 
 	howMany := 1000
