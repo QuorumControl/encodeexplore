@@ -6,6 +6,8 @@ import (
 	"testing"
 	"time"
 
+	"runtime/pprof"
+
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/assert"
 )
@@ -19,7 +21,7 @@ func TestGossip(t *testing.T) {
 	system := &NodeSystem{
 		GNodes:            make([]*GNode, howMany),
 		KNodes:            kNodes,
-		ArtificialLatency: 500,
+		ArtificialLatency: 200,
 	}
 
 	for i := 0; i < howMany; i++ {
@@ -48,6 +50,13 @@ func TestGossip(t *testing.T) {
 	}
 
 	node := system.GNodes[randInt(len(system.GNodes))]
+
+	f, err := os.Create("gossip.prof")
+	if err != nil {
+		t.Fatal(err)
+	}
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()
 
 	node.Incoming <- req
 	resp := <-respChan
